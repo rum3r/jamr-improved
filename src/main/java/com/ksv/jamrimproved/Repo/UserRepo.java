@@ -1,9 +1,10 @@
 package com.ksv.jamrimproved.Repo;
 
 import com.ksv.jamrimproved.Models.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.UUID;
 
-public interface UserRepo {
-    public List<User> getAllUsers();
+public interface UserRepo extends JpaRepository<User, UUID> {
 }
