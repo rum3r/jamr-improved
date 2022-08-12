@@ -26,4 +26,8 @@ public class UserController {
     public User addUser(@RequestBody User user) {
         return userService.addUser(user);
     }
+    @PutMapping("/updateUserByUsername")
+    public User updateUserByUsername(@RequestBody User user) {
+        return userService.updateUserByUsername(user);
+    }
 }

@@ -11,7 +11,5 @@ public interface UserRepo extends JpaRepository<User, UUID> {
     @Query(value = "SELECT u FROM User u WHERE u.userName = ?1")
     User getUserByUsername(String userName);
 
-    @Transactional
-    @Query(value = " into User ?1")
-    User addUser(User user);
+    User updateUserByUsername(User user, String userName);
 }
