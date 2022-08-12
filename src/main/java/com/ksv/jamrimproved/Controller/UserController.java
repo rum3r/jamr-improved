@@ -3,9 +3,7 @@ package com.ksv.jamrimproved.Controller;
 import com.ksv.jamrimproved.Models.User;
 import com.ksv.jamrimproved.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,9 +18,12 @@ public class UserController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
-
     @GetMapping("/getUser/{userName}")
     public User getUser(@PathVariable String userName) {
         return userService.getUser(userName);
+    }
+    @PostMapping("/addUser")
+    public User addUser(@RequestBody User user) {
+        return userService.addUser(user);
     }
 }
