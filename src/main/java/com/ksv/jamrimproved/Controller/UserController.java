@@ -30,4 +30,9 @@ public class UserController {
     public User updateUserByUsername(@RequestBody User user) {
         return userService.updateUserByUsername(user);
     }
+
+    @DeleteMapping("/deleteUserByUsername/{userName}")
+    public User deleteUserByUsername(@PathVariable String userName) {
+        return userService.deleteUserByUsername(userName);
+    }
 }

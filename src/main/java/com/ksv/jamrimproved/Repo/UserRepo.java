@@ -1,6 +1,8 @@
 package com.ksv.jamrimproved.Repo;
 
 import com.ksv.jamrimproved.Models.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -12,4 +14,9 @@ public interface UserRepo extends JpaRepository<User, UUID> {
     User getUserByUsername(String userName);
 
     User updateUserByUsername(User user, String userName);
+
+    @Override
+    Page<User> findAll(Pageable pageable);
+
+    User deleteUserByUsername(String userName);
 }

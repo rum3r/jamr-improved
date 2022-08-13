@@ -26,4 +26,8 @@ public class UserService {
     public User updateUserByUsername(User user) {
         return userRepo.updateUserByUsername(user, user.getUserName());
     }
+
+    public User deleteUserByUsername(String userName) {
+        return userRepo.deleteUserByUsername(userName);
+    }
 }
