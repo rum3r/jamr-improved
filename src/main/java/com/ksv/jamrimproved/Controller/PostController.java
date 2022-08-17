@@ -25,7 +25,7 @@ public class PostController {
     }
 
     @DeleteMapping("deletePost")
-    public void deletePost(@RequestBody(required = true) UUID postId) {
+    public void deletePost(@RequestBody UUID postId) {
         postService.deletePost(postId);
     }
 }
