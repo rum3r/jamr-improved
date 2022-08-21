@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class CommentService {
@@ -14,5 +15,9 @@ public class CommentService {
 
     public List<Comment> getComments() {
         return repo.getComments();
+    }
+
+    public Comment doComment(Comment comment, UUID postId) {
+        return repo.save(comment, postId);
     }
 }
