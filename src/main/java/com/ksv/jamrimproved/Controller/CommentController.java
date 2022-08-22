@@ -15,11 +15,16 @@ public class CommentController {
 
     @GetMapping("/getComments/{postId}")
     public List<Comment> getComments(@PathVariable UUID postId) {
-        return commentService.getComments();
+        return commentService.getComments(postId);
     }
 
     @PostMapping("/doComment/{postId}")
     public Comment doComment(@RequestBody Comment comment, @PathVariable UUID postId) {
         return commentService.doComment(comment, postId);
+    }
+
+    @DeleteMapping("/deleteComment/{commentId}")
+    public void deleteComment(@PathVariable UUID commentId) {
+        commentService.deleteComment(commentId);
     }
 }

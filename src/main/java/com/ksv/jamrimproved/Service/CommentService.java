@@ -13,11 +13,15 @@ public class CommentService {
     @Autowired
     private CommentRepo repo;
 
-    public List<Comment> getComments() {
-        return repo.getComments();
+    public List<Comment> getComments(UUID postId) {
+        return repo.getComments(postId);
     }
 
     public Comment doComment(Comment comment, UUID postId) {
         return repo.save(comment, postId);
+    }
+
+    public void deleteComment(UUID commentId) {
+        repo.deleteById(commentId);
     }
 }
